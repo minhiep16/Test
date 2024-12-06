@@ -1,152 +1,22 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-<head>
-    <title>Đăng nhập và Tạo tài khoản</title>
-    <style>
-        con cho git 
-        <h1>coin card kjkkpop</h1>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .login-container, .signup-container, .schedule-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .login-container h2, .signup-container h2, .schedule-container h2 {
-            margin-bottom: 20px;
-        }
-        .login-container input[type="text"],
-        .login-container input[type="password"],
-        .signup-container input[type="text"],
-        .signup-container input[type="password"],
-        .schedule-container input[type="text"],
-        .schedule-container input[type="date"],
-        .schedule-container input[type="time"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .login-container button,
-        .signup-container button,
-        .schedule-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .login-container button:hover,
-        .signup-container button:hover,
-        .schedule-container button:hover {
-            background-color: #45a049;
-        }
-        .back-button {
-            margin-top: 10px;
-            background-color: #f44336;
-        }
-        .back-button:hover {
-            background-color: #e53935;
-        }
-        #login, #signup, #schedule {
-            display: none;
-        }
-        #login.active, #signup.active, #schedule.active {
-            display: block;
-        }
-    </style>
-    <script>
-        function showLogin() {
-            document.getElementById("signup").classList.remove("active");
-            document.getElementById("schedule").classList.remove("active");
-            document.getElementById("login").classList.add("active");
-        }
-
-        function showSignup() {
-            document.getElementById("login").classList.remove("active");
-            document.getElementById("schedule").classList.remove("active");
-            document.getElementById("signup").classList.add("active");
-        }
-
-        function showSchedule() {
-            document.getElementById("login").classList.remove("active");
-            document.getElementById("signup").classList.remove("active");
-            document.getElementById("schedule").classList.add("active");
-        }
-
-        function login(event) {
-            event.preventDefault();
-            var username = document.getElementById("login-username").value;
-            var password = document.getElementById("login-password").value;
-            var storedUsername = localStorage.getItem("username");
-            var storedPassword = localStorage.getItem("password");
-            if (username === storedUsername && password === storedPassword) {
-                showSchedule();
-            } else {
-                alert("Tên đăng nhập hoặc mật khẩu không đúng!");
-            }
-        }
-
-        function signup(event) {
-            event.preventDefault();
-            var username = document.getElementById("signup-username").value;
-            var password = document.getElementById("signup-password").value;
-            localStorage.setItem("username", username);
-            localStorage.setItem("password", password);
-            alert("Tài khoản được tạo thành công!");
-            showLogin();
-        }
-    </script>
-</head>
-<body>
-    <div id="login" class="login-container active">
-        <h2>Đăng nhập</h2>
-        <form onsubmit="login(event)">
-            <label for="login-username">Tên đăng nhập</label>
-            <input type="text" id="login-username" name="username" required>
-            <label for="login-password">Mật khẩu</label>
-            <input type="password" id="login-password" name="password" required>
-            <button type="submit">Đăng nhập</button>
-        </form>
-        <p>Bạn chưa có tài khoản? <a href="#" onclick="showSignup()">Tạo tài khoản</a></p>
-    </div>
-
-    <div id="signup" class="signup-container">
-        <h2>Tạo tài khoản</h2>
-        <form onsubmit="signup(event)">
-            <label for="signup-username">Tên đăng nhập</label>
-            <input type="text" id="signup-username" name="username" required>
-            <label for="signup-password">Mật khẩu</label>
-            <input type="password" id="signup-password" name="password" required>
-            <button type="submit">Tạo tài khoản</button>
-        </form>
-        <button class="back-button" onclick="showLogin()">Back</button>
-        <p>Đã có tài khoản? <a href="#" onclick="showLogin()">Đăng nhập</a></p>
-    </div>
-
-    <div id="schedule" class="schedule-container">
-        <h2>Đặt lịch</h2>
-        <form>
-            <label for="event">Sự kiện</label>
-            <input type="text" id="event" name="event" required>
-            <label for="date">Ngày</label>
-            <input type="date" id="date" name="date" required>
-            <label for="time">Giờ</label>
-            <input type="time" id="time" name="time" required>
-            <button type="submit">Đặt lịch</button>
-        </form>
-        <button class="back-button" onclick="showLogin()">Back</button>
-    </div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>da thanh cong</h1>
+        <script src="" async defer></script>
+    </body>
 </html>
